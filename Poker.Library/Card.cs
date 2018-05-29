@@ -7,8 +7,6 @@ namespace Poker.Library
     {
         public Suit Suit { get; }
         public Value Value { get; }
-       
-        private Value _value;
         public Card(Suit suit, Value value) {
             Suit = suit;
             Value = value;
