@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using System;
+using System.Collections.Generic;
 using Poker.Library;
 
 namespace ConsolePoker
@@ -23,14 +25,20 @@ namespace ConsolePoker
                 }
 
                 PrintHand(hand);
-                
 
+                Console.WriteLine("Do you want to switch cards? Enter position (separated by ';')");
+
+                var swaps = Console.ReadLine();
+//                hand = SwapCards(hand, swaps);
+                PrintHand(hand);
+                Console.ReadLine();
 
             }
 
 
             Console.ReadLine();
         }
+
 
         private static void PrintHand(Hand hand)
         {
