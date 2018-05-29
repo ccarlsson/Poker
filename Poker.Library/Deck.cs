@@ -9,6 +9,7 @@ namespace Poker.Library {
         public int CardsLeft => _deck.Count;
         public Card Deal => _deck.Pop();
 
+        public Deck() : this(new Randomizer()) { }
         public Deck(IRandomizer randomizer) {
             _rnd = randomizer;
 

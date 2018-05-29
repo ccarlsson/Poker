@@ -12,13 +12,11 @@ namespace Poker.Library
             Value = value;
         }
 
-        public string GetCard() {
-            return this.ToString();
-        }
+        public string ShortName => this.ToString();
 
-        public string GetLongName()  =>
+        public string LongName =>
              $"{Value.GetLongName()} of {Suit.GetLongName()}";
-        
+
 
         public override string ToString(){
             return Value.GetShortName() + Suit.GetShortName();

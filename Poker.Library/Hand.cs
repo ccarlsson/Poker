@@ -30,7 +30,7 @@ namespace Poker.Library {
         public override string ToString() {
             StringBuilder sb = new StringBuilder();
             foreach(var card in _cards) {
-                sb.Append($"{card }");
+                sb.Append($"{card} ");
             }
 
             return sb.ToString();

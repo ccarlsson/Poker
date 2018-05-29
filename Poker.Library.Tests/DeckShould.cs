@@ -29,7 +29,7 @@ namespace Poker.Library.Tests
         //When
             var card = deck.Deal;
         //Then
-            Assert.Equal(expected, card.GetCard());
+            Assert.Equal(expected, card.ShortName);
         }
     }
 }

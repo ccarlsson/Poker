@@ -1,3 +1,4 @@
+using Poker.Library.Extentions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace Poker.Library.Categorize
     {
         public override HandRanking Categorize(Hand hand)
         {
-            if (HasNoOfKind(2, hand))
+            if (hand.HasNoOfKind(2))
                 return HandRanking.OnePair;
             return Next.Categorize(hand);
         }
@@ -40,17 +41,17 @@ namespace Poker.Library.Categorize
     {
         public override HandRanking Categorize(Hand hand)
         {
-            if (HasNoOfKind(3, hand))
+            if (hand.HasNoOfKind(3))
                 return HandRanking.ThreeOfAKind;
             return Next.Categorize(hand);
         }
     }
-
+    
     class StraightCategorizer : HandCategorizer
     {
         public override HandRanking Categorize(Hand hand)
         {
-            if (HasStrait(hand))
+            if (hand.HasStrait())
                 return HandRanking.Strait;
 
             return Next.Categorize(hand);
@@ -61,7 +62,7 @@ namespace Poker.Library.Categorize
     {
         public override HandRanking Categorize(Hand hand)
         {
-            if (HasFlush(hand))
+            if (hand.HasFlush())
                 return HandRanking.Flush;
             return Next.Categorize(hand);
         }
@@ -71,7 +72,7 @@ namespace Poker.Library.Categorize
     {
         public override HandRanking Categorize(Hand hand)
         {
-            if (HasNoOfKind(3, hand) && HasNoOfKind(2, hand))
+            if (hand.HasNoOfKind(3) && hand.HasNoOfKind(2))
                 return HandRanking.FullHouse;
 
             return Next.Categorize(hand);
@@ -82,7 +83,7 @@ namespace Poker.Library.Categorize
     {
         public override HandRanking Categorize(Hand hand)
         {
-            if (HasNoOfKind(4, hand))
+            if (hand.HasNoOfKind(4))
                 return HandRanking.FourOfAKind;
             return Next.Categorize(hand);
         }
@@ -92,7 +93,7 @@ namespace Poker.Library.Categorize
     {
         public override HandRanking Categorize(Hand hand)
         {
-            if (HasStrait(hand) && HasFlush(hand))
+            if (hand.HasStrait() && hand.HasFlush())
                 return HandRanking.StraitFlush;
             return Next.Categorize(hand);
         }
@@ -102,7 +103,7 @@ namespace Poker.Library.Categorize
     {
         public override HandRanking Categorize(Hand hand)
         {
-            if (HasFlush(hand) && HasStrait(hand) && hand.HighCard.Value == Value.Ace)
+            if (hand.HasFlush() && hand.HasStrait() && hand.Has(Value.King) && hand.Has(Value.Ace))
                 return HandRanking.RoyalStraitFlush;
             return Next.Categorize(hand);
         }

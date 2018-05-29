@@ -32,7 +32,7 @@ namespace Poker.Library.Tests
             var c = new Card(Suit.Spade, Value.Ten);
             var expected = "Ten of Spade";
         //When
-            var result = c.GetLongName();
+            var result = c.LongName;
         //Then
             Assert.Equal(expected, result);
         }
