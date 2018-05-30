@@ -1,7 +1,5 @@
 ﻿using Poker.Library.Categorize;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace Poker.Library.Tests
@@ -10,7 +8,7 @@ namespace Poker.Library.Tests
     public class HandShould
     {
         [Fact]
-        public void CategorizeHighCard()
+        public void RankHighCard()
         {
             //Given
             var hand = new Hand();
@@ -28,7 +26,7 @@ namespace Poker.Library.Tests
         }
 
         [Fact]
-        public void CategorizeAPair()
+        public void RankPair()
         {
             //Given
             var hand = new Hand();
@@ -46,7 +44,7 @@ namespace Poker.Library.Tests
         }
 
         [Fact]
-        public void CategorizeTwoPairs()
+        public void RankTwoPairs()
         {
             //Given
             var hand = new Hand();
@@ -64,7 +62,7 @@ namespace Poker.Library.Tests
         }
 
         [Fact]
-        public void CategorizeThreeOfAKind()
+        public void RankThreeOfAKind()
         {
             //Given
             var hand = new Hand();
@@ -82,7 +80,7 @@ namespace Poker.Library.Tests
         }
 
         [Fact]
-        public void CategorizeAStrait()
+        public void RankStrait()
         {
             //Given
             var hand = new Hand();
@@ -100,7 +98,7 @@ namespace Poker.Library.Tests
         }
 
         [Fact]
-        public void CategorizeAStraitWithAceLow()
+        public void RankStraitWithAceLow()
         {
             //Given
             var hand = new Hand();
@@ -118,7 +116,7 @@ namespace Poker.Library.Tests
         }
 
         [Fact]
-        public void CategorizeAFlush()
+        public void RankFlush()
         {
             //Given
             var hand = new Hand();
@@ -136,7 +134,7 @@ namespace Poker.Library.Tests
         }
 
         [Fact]
-        public void CategorizeAFullHouse()
+        public void RankFullHouse()
         {
             //Given
             var hand = new Hand();
@@ -154,7 +152,7 @@ namespace Poker.Library.Tests
         }
 
         [Fact]
-        public void CategorizeFourOfAKind()
+        public void RankFourOfAKind()
         {
             //Given
             var hand = new Hand();
@@ -172,7 +170,7 @@ namespace Poker.Library.Tests
         }
 
         [Fact]
-        public void CategorizeStraightFlush()
+        public void RankStraightFlush()
         {
             //Given
             var hand = new Hand();
@@ -190,7 +188,7 @@ namespace Poker.Library.Tests
         }
 
         [Fact]
-        public void CategorizeStraightFlushWithAnAceLow()
+        public void RankStraightFlushWithAnAceLow()
         {
             //Given
             var hand = new Hand();
@@ -207,7 +205,7 @@ namespace Poker.Library.Tests
 
         }
         [Fact]
-        public void CategorizeRoyalStraightFlush()
+        public void RankRoyalStraightFlush()
         {
             //Given
             var hand = new Hand();
@@ -222,6 +220,20 @@ namespace Poker.Library.Tests
             //Then
             Assert.Equal(expected, actual);
 
+        }
+
+        [Fact]
+        public void NotAcceptMoreThenFiveCards()
+        {
+            Hand hand = new Hand();
+            hand.Add(new Card(Suit.Heart, Value.Two));
+            hand.Add(new Card(Suit.Spade, Value.Ace));
+            hand.Add(new Card(Suit.Heart, Value.Three));
+            hand.Add(new Card(Suit.Diamond, Value.Nine));
+            hand.Add(new Card(Suit.Heart, Value.Six));
+
+            var ex = Assert.Throws<IndexOutOfRangeException>(() => hand.Add(new Card(Suit.Diamond, Value.Ace)));
+            Assert.Equal("Cannot add more then five cards.", ex.Message);
         }
     }
 }

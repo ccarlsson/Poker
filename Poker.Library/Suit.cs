@@ -1,5 +1,4 @@
-   
-namespace Poker.Library {
+   namespace Poker.Library {
    public enum Suit {
         Heart,
         Diamond,
