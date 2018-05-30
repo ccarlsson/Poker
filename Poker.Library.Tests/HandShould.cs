@@ -21,8 +21,7 @@ namespace Poker.Library.Tests
             //When
             var actual = hand.Rank;
             //Then
-            Assert.Equal(expected, actual);
-
+            Assert.Equal(expected, actual); 
         }
 
         [Fact]
@@ -39,8 +38,7 @@ namespace Poker.Library.Tests
             //When
             var actual = hand.Rank;
             //Then
-            Assert.Equal(expected, actual);
-
+            Assert.Equal(expected, actual); 
         }
 
         [Fact]
@@ -57,8 +55,7 @@ namespace Poker.Library.Tests
             //When
             var actual = hand.Rank;
             //Then
-            Assert.Equal(expected, actual);
-
+            Assert.Equal(expected, actual); 
         }
 
         [Fact]
@@ -75,8 +72,7 @@ namespace Poker.Library.Tests
             //When
             var actual = hand.Rank;
             //Then
-            Assert.Equal(expected, actual);
-
+            Assert.Equal(expected, actual); 
         }
 
         [Fact]
@@ -93,8 +89,7 @@ namespace Poker.Library.Tests
             //When
             var actual = hand.Rank;
             //Then
-            Assert.Equal(expected, actual);
-
+            Assert.Equal(expected, actual); 
         }
 
         [Fact]
@@ -111,8 +106,7 @@ namespace Poker.Library.Tests
             //When
             var actual = hand.Rank;
             //Then
-            Assert.Equal(expected, actual);
-
+            Assert.Equal(expected, actual); 
         }
 
         [Fact]
@@ -129,8 +123,7 @@ namespace Poker.Library.Tests
             //When
             var actual = hand.Rank;
             //Then
-            Assert.Equal(expected, actual);
-
+            Assert.Equal(expected, actual); 
         }
 
         [Fact]
@@ -147,8 +140,7 @@ namespace Poker.Library.Tests
             //When
             var actual = hand.Rank;
             //Then
-            Assert.Equal(expected, actual);
-
+            Assert.Equal(expected, actual); 
         }
 
         [Fact]
@@ -165,8 +157,7 @@ namespace Poker.Library.Tests
             //When
             var actual = hand.Rank;
             //Then
-            Assert.Equal(expected, actual);
-
+            Assert.Equal(expected, actual); 
         }
 
         [Fact]
@@ -183,8 +174,7 @@ namespace Poker.Library.Tests
             //When
             var actual = hand.Rank;
             //Then
-            Assert.Equal(expected, actual);
-
+            Assert.Equal(expected, actual); 
         }
 
         [Fact]
@@ -201,9 +191,9 @@ namespace Poker.Library.Tests
             //When
             var actual = hand.Rank;
             //Then
-            Assert.Equal(expected, actual);
-
+            Assert.Equal(expected, actual); 
         }
+
         [Fact]
         public void RankRoyalStraightFlush()
         {
@@ -218,8 +208,7 @@ namespace Poker.Library.Tests
             //When
             var actual = hand.Rank;
             //Then
-            Assert.Equal(expected, actual);
-
+            Assert.Equal(expected, actual); 
         }
 
         [Fact]
@@ -234,6 +223,22 @@ namespace Poker.Library.Tests
 
             var ex = Assert.Throws<IndexOutOfRangeException>(() => hand.Add(new Card(Suit.Diamond, Value.Ace)));
             Assert.Equal("Cannot add more then five cards.", ex.Message);
+        }
+
+        [Fact]
+        public void ReturnCorrectString()
+        {
+            Hand hand = new Hand();
+            hand.Add(new Card(Suit.Heart, Value.Ace));
+            hand.Add(new Card(Suit.Heart, Value.Jack));
+            hand.Add(new Card(Suit.Heart, Value.King));
+            hand.Add(new Card(Suit.Heart, Value.Ten));
+            hand.Add(new Card(Suit.Heart, Value.Queen));
+            var expected = "AH JH KH 10H QH";
+
+            var actual = hand.ToString();
+
+            Assert.Equal(expected, actual);
         }
     }
 }

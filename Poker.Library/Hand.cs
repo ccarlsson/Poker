@@ -27,13 +27,13 @@ namespace Poker.Library {
 
         public IEnumerable<Card> Cards => _cards;
 
-        public override string ToString() {
-            StringBuilder sb = new StringBuilder();
-            foreach(var card in _cards) {
-                sb.Append($"{card} ");
-            }
-
-            return sb.ToString();
-        }
+        public override string ToString() => 
+            _cards.Aggregate(new StringBuilder(), (a, b) => {
+                if (a.Length > 0)
+                    a.Append(" ");
+                a.Append(b);
+                return a;
+            }).ToString();
+        
     }
 }

@@ -19,10 +19,18 @@ namespace Poker.Library.Tests
         }
     }
 
-
-
     public class DeckShould
     {
+        [Fact]
+        public void Have52CardsAfterShuffle()
+        {
+            var deck = new Deck();
+
+            deck.Shuffle();
+
+            Assert.NotNull(deck);
+            Assert.Equal(52, deck.CardsLeft);
+        }
 
         [Fact]
         public void Deal2OfHearts()
