@@ -1,8 +1,2 @@
 language: csharp
 solution: Poker.sln
-install:
-  - nuget restore Poker.sln
-  - nuget install xunit.runners -Version 1.9.2 -OutputDirectory testrunner
-script:
-  - xbuild /p:Configuration=Release Poker.sln
-  - mono ./testrunner/xunit.runners.1.9.2/tools/xunit.console.clr4.exe ./Poker.Library.Tests/bin/Release/Poker.Tests.dll
