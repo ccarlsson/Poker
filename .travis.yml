@@ -3,5 +3,4 @@ solution: Poker.sln
 mono: none
 dotnet: 2.0.0
 script:
-  - dotnet restore
-  - dotnet build -c Release
+  - dotnet build
