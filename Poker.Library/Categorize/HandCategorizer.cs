@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Poker.Library.Categorize {
     abstract class HandCategorizer {
-        protected HandCategorizer? Next { get; private set;} 
+        protected HandCategorizer Next { get; private set;} 
 
         public HandCategorizer RegisterNext(HandCategorizer next) {
             Next = next;
