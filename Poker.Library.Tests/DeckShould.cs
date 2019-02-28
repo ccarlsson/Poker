@@ -1,6 +1,4 @@
-using System;
 using System.Linq;
-using Poker.Library;
 using Xunit;
 
 namespace Poker.Library.Tests

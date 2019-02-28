@@ -1,5 +1,3 @@
-using System;
-using Poker.Library;
 using Xunit;
 
 namespace Poker.Library.Tests
