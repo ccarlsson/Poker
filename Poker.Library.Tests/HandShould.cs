@@ -12,11 +12,11 @@ namespace Poker.Library.Tests
         {
             //Given
             var hand = new Hand();
-            hand.Add(new Card(Suit.Club, Value.Three));
-            hand.Add(new Card(Suit.Diamond, Value.Ace));
-            hand.Add(new Card(Suit.Heart, Value.Jack));
-            hand.Add(new Card(Suit.Spade, Value.Ten));
-            hand.Add(new Card(Suit.Club, Value.Two));
+            hand.Add(new Card(Suit.Clubs, Value.Three));
+            hand.Add(new Card(Suit.Diamonds, Value.Ace));
+            hand.Add(new Card(Suit.Hearts, Value.Jack));
+            hand.Add(new Card(Suit.Spades, Value.Ten));
+            hand.Add(new Card(Suit.Clubs, Value.Two));
             var expected = HandRanking.HighCard;
             //When
             var actual = hand.Rank;
@@ -29,11 +29,11 @@ namespace Poker.Library.Tests
         {
             //Given
             var hand = new Hand();
-            hand.Add(new Card(Suit.Club, Value.Ace));
-            hand.Add(new Card(Suit.Diamond, Value.Ace));
-            hand.Add(new Card(Suit.Heart, Value.Jack));
-            hand.Add(new Card(Suit.Spade, Value.Ten));
-            hand.Add(new Card(Suit.Club, Value.Two));
+            hand.Add(new Card(Suit.Clubs, Value.Ace));
+            hand.Add(new Card(Suit.Diamonds, Value.Ace));
+            hand.Add(new Card(Suit.Hearts, Value.Jack));
+            hand.Add(new Card(Suit.Spades, Value.Ten));
+            hand.Add(new Card(Suit.Clubs, Value.Two));
             var expected = HandRanking.OnePair;
             //When
             var actual = hand.Rank;
@@ -46,11 +46,11 @@ namespace Poker.Library.Tests
         {
             //Given
             var hand = new Hand();
-            hand.Add(new Card(Suit.Club, Value.Ace));
-            hand.Add(new Card(Suit.Diamond, Value.Ace));
-            hand.Add(new Card(Suit.Heart, Value.Jack));
-            hand.Add(new Card(Suit.Spade, Value.Jack));
-            hand.Add(new Card(Suit.Club, Value.Two));
+            hand.Add(new Card(Suit.Clubs, Value.Ace));
+            hand.Add(new Card(Suit.Diamonds, Value.Ace));
+            hand.Add(new Card(Suit.Hearts, Value.Jack));
+            hand.Add(new Card(Suit.Spades, Value.Jack));
+            hand.Add(new Card(Suit.Clubs, Value.Two));
             var expected = HandRanking.TwoPairs;
             //When
             var actual = hand.Rank;
@@ -63,11 +63,11 @@ namespace Poker.Library.Tests
         {
             //Given
             var hand = new Hand();
-            hand.Add(new Card(Suit.Club, Value.Ace));
-            hand.Add(new Card(Suit.Diamond, Value.King));
-            hand.Add(new Card(Suit.Heart, Value.Jack));
-            hand.Add(new Card(Suit.Spade, Value.Queen));
-            hand.Add(new Card(Suit.Club, Value.Ten));
+            hand.Add(new Card(Suit.Clubs, Value.Ace));
+            hand.Add(new Card(Suit.Diamonds, Value.King));
+            hand.Add(new Card(Suit.Hearts, Value.Jack));
+            hand.Add(new Card(Suit.Spades, Value.Queen));
+            hand.Add(new Card(Suit.Clubs, Value.Ten));
             var expected = HandRanking.Straight;
             //When
             var actual = hand.Rank;
@@ -80,11 +80,11 @@ namespace Poker.Library.Tests
         {
             //Given
             var hand = new Hand();
-            hand.Add(new Card(Suit.Club, Value.Ace));
-            hand.Add(new Card(Suit.Diamond, Value.Two));
-            hand.Add(new Card(Suit.Heart, Value.Three));
-            hand.Add(new Card(Suit.Spade, Value.Four));
-            hand.Add(new Card(Suit.Club, Value.Five));
+            hand.Add(new Card(Suit.Clubs, Value.Ace));
+            hand.Add(new Card(Suit.Diamonds, Value.Two));
+            hand.Add(new Card(Suit.Hearts, Value.Three));
+            hand.Add(new Card(Suit.Spades, Value.Four));
+            hand.Add(new Card(Suit.Clubs, Value.Five));
             var expected = HandRanking.Straight;
             //When
             var actual = hand.Rank;
@@ -97,11 +97,11 @@ namespace Poker.Library.Tests
         {
             //Given
             var hand = new Hand();
-            hand.Add(new Card(Suit.Club, Value.Ace));
-            hand.Add(new Card(Suit.Club, Value.Nine));
-            hand.Add(new Card(Suit.Club, Value.Jack));
-            hand.Add(new Card(Suit.Club, Value.Ten));
-            hand.Add(new Card(Suit.Club, Value.Two));
+            hand.Add(new Card(Suit.Clubs, Value.Ace));
+            hand.Add(new Card(Suit.Clubs, Value.Nine));
+            hand.Add(new Card(Suit.Clubs, Value.Jack));
+            hand.Add(new Card(Suit.Clubs, Value.Ten));
+            hand.Add(new Card(Suit.Clubs, Value.Two));
             var expected = HandRanking.Flush;
             //When
             var actual = hand.Rank;
@@ -114,11 +114,11 @@ namespace Poker.Library.Tests
         {
             //Given
             var hand = new Hand();
-            hand.Add(new Card(Suit.Club, Value.Nine));
-            hand.Add(new Card(Suit.Diamond, Value.Six));
-            hand.Add(new Card(Suit.Heart, Value.Nine));
-            hand.Add(new Card(Suit.Spade, Value.Nine));
-            hand.Add(new Card(Suit.Club, Value.Six));
+            hand.Add(new Card(Suit.Clubs, Value.Nine));
+            hand.Add(new Card(Suit.Diamonds, Value.Six));
+            hand.Add(new Card(Suit.Hearts, Value.Nine));
+            hand.Add(new Card(Suit.Spades, Value.Nine));
+            hand.Add(new Card(Suit.Clubs, Value.Six));
             var expected = HandRanking.FullHouse;
             //When
             var actual = hand.Rank;
@@ -131,11 +131,11 @@ namespace Poker.Library.Tests
         {
             //Given
             var hand = new Hand();
-            hand.Add(new Card(Suit.Club, Value.Six));
-            hand.Add(new Card(Suit.Club, Value.Five));
-            hand.Add(new Card(Suit.Club, Value.Four));
-            hand.Add(new Card(Suit.Club, Value.Three));
-            hand.Add(new Card(Suit.Club, Value.Two));
+            hand.Add(new Card(Suit.Clubs, Value.Six));
+            hand.Add(new Card(Suit.Clubs, Value.Five));
+            hand.Add(new Card(Suit.Clubs, Value.Four));
+            hand.Add(new Card(Suit.Clubs, Value.Three));
+            hand.Add(new Card(Suit.Clubs, Value.Two));
             var expected = HandRanking.StraightFlush;
             //When
             var actual = hand.Rank;
@@ -148,11 +148,11 @@ namespace Poker.Library.Tests
         {
             //Given
             var hand = new Hand();
-            hand.Add(new Card(Suit.Club, Value.Ace));
-            hand.Add(new Card(Suit.Club, Value.Five));
-            hand.Add(new Card(Suit.Club, Value.Four));
-            hand.Add(new Card(Suit.Club, Value.Three));
-            hand.Add(new Card(Suit.Club, Value.Two));
+            hand.Add(new Card(Suit.Clubs, Value.Ace));
+            hand.Add(new Card(Suit.Clubs, Value.Five));
+            hand.Add(new Card(Suit.Clubs, Value.Four));
+            hand.Add(new Card(Suit.Clubs, Value.Three));
+            hand.Add(new Card(Suit.Clubs, Value.Two));
             var expected = HandRanking.StraightFlush;
             //When
             var actual = hand.Rank;
@@ -165,11 +165,11 @@ namespace Poker.Library.Tests
         {
             //Given
             var hand = new Hand();
-            hand.Add(new Card(Suit.Heart, Value.Ace));
-            hand.Add(new Card(Suit.Heart, Value.Jack));
-            hand.Add(new Card(Suit.Heart, Value.King));
-            hand.Add(new Card(Suit.Heart, Value.Ten));
-            hand.Add(new Card(Suit.Heart, Value.Queen));
+            hand.Add(new Card(Suit.Hearts, Value.Ace));
+            hand.Add(new Card(Suit.Hearts, Value.Jack));
+            hand.Add(new Card(Suit.Hearts, Value.King));
+            hand.Add(new Card(Suit.Hearts, Value.Ten));
+            hand.Add(new Card(Suit.Hearts, Value.Queen));
             var expected = HandRanking.RoyalStraightFlush;
             //When
             var actual = hand.Rank;
@@ -181,13 +181,13 @@ namespace Poker.Library.Tests
         public void NotAcceptMoreThenFiveCards()
         {
             Hand hand = new Hand();
-            hand.Add(new Card(Suit.Heart, Value.Two));
-            hand.Add(new Card(Suit.Spade, Value.Ace));
-            hand.Add(new Card(Suit.Heart, Value.Three));
-            hand.Add(new Card(Suit.Diamond, Value.Nine));
-            hand.Add(new Card(Suit.Heart, Value.Six));
+            hand.Add(new Card(Suit.Hearts, Value.Two));
+            hand.Add(new Card(Suit.Spades, Value.Ace));
+            hand.Add(new Card(Suit.Hearts, Value.Three));
+            hand.Add(new Card(Suit.Diamonds, Value.Nine));
+            hand.Add(new Card(Suit.Hearts, Value.Six));
 
-            var ex = Assert.Throws<IndexOutOfRangeException>(() => hand.Add(new Card(Suit.Diamond, Value.Ace)));
+            var ex = Assert.Throws<IndexOutOfRangeException>(() => hand.Add(new Card(Suit.Diamonds, Value.Ace)));
             Assert.Equal("Cannot add more then five cards.", ex.Message);
         }
 
@@ -195,11 +195,11 @@ namespace Poker.Library.Tests
         public void ReturnCorrectString()
         {
             Hand hand = new Hand();
-            hand.Add(new Card(Suit.Heart, Value.Ace));
-            hand.Add(new Card(Suit.Heart, Value.Jack));
-            hand.Add(new Card(Suit.Heart, Value.King));
-            hand.Add(new Card(Suit.Heart, Value.Ten));
-            hand.Add(new Card(Suit.Heart, Value.Queen));
+            hand.Add(new Card(Suit.Hearts, Value.Ace));
+            hand.Add(new Card(Suit.Hearts, Value.Jack));
+            hand.Add(new Card(Suit.Hearts, Value.King));
+            hand.Add(new Card(Suit.Hearts, Value.Ten));
+            hand.Add(new Card(Suit.Hearts, Value.Queen));
             var expected = "AH JH KH 10H QH";
 
             var actual = hand.ToString();

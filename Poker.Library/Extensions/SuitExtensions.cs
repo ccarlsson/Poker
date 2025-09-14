@@ -5,10 +5,10 @@ namespace Poker.Library.Extensions {
        public static string GetShortName(this Suit suit) =>
            suit switch
            {
-               Suit.Club => "C",
-               Suit.Heart => "H",
-               Suit.Spade => "S",
-               Suit.Diamond => "D",
+               Suit.Clubs => "C",
+               Suit.Hearts => "H",
+               Suit.Spades => "S",
+               Suit.Diamonds => "D",
                _ => throw new ArgumentException(nameof(suit))
            };
 
