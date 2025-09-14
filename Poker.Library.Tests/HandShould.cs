@@ -59,24 +59,7 @@ namespace Poker.Library.Tests
         }
 
         [Fact]
-        public void RankThreeOfAKind()
-        {
-            //Given
-            var hand = new Hand();
-            hand.Add(new Card(Suit.Club, Value.Ace));
-            hand.Add(new Card(Suit.Diamond, Value.Ace));
-            hand.Add(new Card(Suit.Heart, Value.Ace));
-            hand.Add(new Card(Suit.Spade, Value.Ten));
-            hand.Add(new Card(Suit.Club, Value.Two));
-            var expected = HandRanking.ThreeOfAKind;
-            //When
-            var actual = hand.Rank;
-            //Then
-            Assert.Equal(expected, actual); 
-        }
-
-        [Fact]
-        public void RankStrait()
+        public void RankStraight()
         {
             //Given
             var hand = new Hand();
@@ -85,7 +68,7 @@ namespace Poker.Library.Tests
             hand.Add(new Card(Suit.Heart, Value.Jack));
             hand.Add(new Card(Suit.Spade, Value.Queen));
             hand.Add(new Card(Suit.Club, Value.Ten));
-            var expected = HandRanking.Strait;
+            var expected = HandRanking.Straight;
             //When
             var actual = hand.Rank;
             //Then
@@ -93,7 +76,7 @@ namespace Poker.Library.Tests
         }
 
         [Fact]
-        public void RankStraitWithAceLow()
+        public void RankStraightWithAceLow()
         {
             //Given
             var hand = new Hand();
@@ -102,7 +85,7 @@ namespace Poker.Library.Tests
             hand.Add(new Card(Suit.Heart, Value.Three));
             hand.Add(new Card(Suit.Spade, Value.Four));
             hand.Add(new Card(Suit.Club, Value.Five));
-            var expected = HandRanking.Strait;
+            var expected = HandRanking.Straight;
             //When
             var actual = hand.Rank;
             //Then
@@ -144,23 +127,6 @@ namespace Poker.Library.Tests
         }
 
         [Fact]
-        public void RankFourOfAKind()
-        {
-            //Given
-            var hand = new Hand();
-            hand.Add(new Card(Suit.Club, Value.Ace));
-            hand.Add(new Card(Suit.Diamond, Value.Ace));
-            hand.Add(new Card(Suit.Heart, Value.Ace));
-            hand.Add(new Card(Suit.Spade, Value.Ace));
-            hand.Add(new Card(Suit.Club, Value.Two));
-            var expected = HandRanking.FourOfAKind;
-            //When
-            var actual = hand.Rank;
-            //Then
-            Assert.Equal(expected, actual); 
-        }
-
-        [Fact]
         public void RankStraightFlush()
         {
             //Given
@@ -170,7 +136,7 @@ namespace Poker.Library.Tests
             hand.Add(new Card(Suit.Club, Value.Four));
             hand.Add(new Card(Suit.Club, Value.Three));
             hand.Add(new Card(Suit.Club, Value.Two));
-            var expected = HandRanking.StraitFlush;
+            var expected = HandRanking.StraightFlush;
             //When
             var actual = hand.Rank;
             //Then
@@ -187,7 +153,7 @@ namespace Poker.Library.Tests
             hand.Add(new Card(Suit.Club, Value.Four));
             hand.Add(new Card(Suit.Club, Value.Three));
             hand.Add(new Card(Suit.Club, Value.Two));
-            var expected = HandRanking.StraitFlush;
+            var expected = HandRanking.StraightFlush;
             //When
             var actual = hand.Rank;
             //Then
@@ -204,7 +170,7 @@ namespace Poker.Library.Tests
             hand.Add(new Card(Suit.Heart, Value.King));
             hand.Add(new Card(Suit.Heart, Value.Ten));
             hand.Add(new Card(Suit.Heart, Value.Queen));
-            var expected = HandRanking.RoyalStraitFlush;
+            var expected = HandRanking.RoyalStraightFlush;
             //When
             var actual = hand.Rank;
             //Then

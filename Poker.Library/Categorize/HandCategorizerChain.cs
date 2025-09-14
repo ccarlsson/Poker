@@ -1,7 +1,7 @@
 namespace Poker.Library.Categorize {
     internal class HandCategorizerChain {
         private HandCategorizerChain() {
-            Head = new RoyalStraitFlushCategorizer();
+            Head = new RoyalStraightFlushCategorizer();
             Head.RegisterNext(new StraightFlushCategorizer())
             .RegisterNext(new FourOfAKindCategorizer())
             .RegisterNext(new FullHouseCategorizer())

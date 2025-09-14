@@ -1,16 +1,15 @@
-namespace Poker.Library.Categorize
-{
+namespace Poker.Library.Categorize {
     public enum HandRanking {
         Unknown,
         HighCard,
         OnePair,
         TwoPairs,
         ThreeOfAKind,
-        Strait,
+        Straight,
         Flush,
         FullHouse,
         FourOfAKind,
-        StraitFlush,
-        RoyalStraitFlush
+        StraightFlush,
+        RoyalStraightFlush
     }
 }

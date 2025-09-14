@@ -1,5 +1,5 @@
 ﻿using System;
-using Poker.Library.Extentions;
+using Poker.Library.Extensions;
 
 namespace Poker.Library
 {

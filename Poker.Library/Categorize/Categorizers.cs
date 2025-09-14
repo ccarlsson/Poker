@@ -1,4 +1,4 @@
-using Poker.Library.Extentions;
+using Poker.Library.Extensions;
 using System.Linq;
 using System;
 
@@ -56,8 +56,8 @@ namespace Poker.Library.Categorize
         {
             if (Next == null) throw new InvalidOperationException();
 
-            if (hand.HasStrait())
-                return HandRanking.Strait;
+            if (hand.HasStraight())
+                return HandRanking.Straight;
 
             return Next.Categorize(hand);
         }
@@ -107,20 +107,20 @@ namespace Poker.Library.Categorize
         {
             if (Next == null) throw new InvalidOperationException();
 
-            if (hand.HasStrait() && hand.HasFlush())
-                return HandRanking.StraitFlush;
+            if (hand.HasStraight() && hand.HasFlush())
+                return HandRanking.StraightFlush;
             return Next.Categorize(hand);
         }
     }
 
-    class RoyalStraitFlushCategorizer : HandCategorizer
+    class RoyalStraightFlushCategorizer : HandCategorizer
     {
         public override HandRanking Categorize(Hand hand)
         {
             if (Next == null) throw new InvalidOperationException();
 
-            if (hand.HasFlush() && hand.HasStrait() && hand.Has(Value.King) && hand.Has(Value.Ace))
-                return HandRanking.RoyalStraitFlush;
+            if (hand.HasFlush() && hand.HasStraight() && hand.Has(Value.King) && hand.Has(Value.Ace))
+                return HandRanking.RoyalStraightFlush;
             return Next.Categorize(hand);
         }
     }

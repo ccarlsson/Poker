@@ -7,33 +7,27 @@ using Poker.Library.Categorize;
 namespace Poker.Library {
     public class Hand {
         private readonly List<Card> _cards = new List<Card>();
-        public HandRanking Rank {get;set;}
+        public HandRanking Rank { get; private set; } = HandRanking.Unknown;
+
         public void Add(Card card) {
-            if(_cards.Count >= 5) throw new IndexOutOfRangeException("Cannot add more then five cards.");
+            if (_cards.Count >= 5) throw new IndexOutOfRangeException("Cannot add more then five cards.");
 
             _cards.Add(card);
 
-            if(_cards.Count == 5) {
+            if (_cards.Count == 5) {
                 Rank = HandCategorizerChain.GetRank(this);
             }
         }
 
         public Card HighCard {
             get {
-                if(_cards.Count == 0) throw new IndexOutOfRangeException("Empty hand");
-                return _cards.OrderByDescending(c => c.Value).First();
+                if (_cards.Count == 0) throw new IndexOutOfRangeException("Empty hand");
+                return _cards.MaxBy(c => c.Value)!;
             }
         }
 
         public IEnumerable<Card> Cards => _cards;
 
-        public override string ToString() => 
-            _cards.Aggregate(new StringBuilder(), (a, b) => {
-                if (a.Length > 0)
-                    a.Append(" ");
-                a.Append(b);
-                return a;
-            }).ToString();
-        
+        public override string ToString() => string.Join(" ", _cards);
     }
 }
